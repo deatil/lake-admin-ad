@@ -90,15 +90,15 @@
                 </div>
             </div>
             
-            <div class="layui-form-item type-name layui-hide">
+            <div class="layui-form-item type-text layui-hide">
                 <label class="layui-form-label">
                     文字
                 </label>
                 <div class="layui-input-block w500">
-                    {if $info.type == 3}
-                        <input type="text" name="name" value="{$info.content}" autocomplete="off" placeholder="文字" class="layui-input">
+                    {if $info.type == 4}
+                        <input type="text" name="text" value="{$info.content}" autocomplete="off" placeholder="文字" class="layui-input">
                     {else /}
-                        <input type="text" name="name" value="" autocomplete="off" placeholder="文字" class="layui-input">
+                        <input type="text" name="text" value="" autocomplete="off" placeholder="文字" class="layui-input">
                     {/if}
                 </div>
             </div>
@@ -192,7 +192,7 @@ layui.use(['layer', 'form', 'laydate'], function() {
         $(".type-images").addClass('layui-hide');
         $(".type-url").addClass('layui-hide');
         $(".type-code").addClass('layui-hide');
-        $(".type-name").addClass('layui-hide');
+        $(".type-text").addClass('layui-hide');
         
         if (value == 1) {
             $('.type-images').removeClass('layui-hide');
@@ -201,7 +201,7 @@ layui.use(['layer', 'form', 'laydate'], function() {
         } else if (value == 3) {
             $('.type-code').removeClass('layui-hide');
         } else if (value == 4) {
-            $('.type-name').removeClass('layui-hide');
+            $('.type-text').removeClass('layui-hide');
         }
     }
 });

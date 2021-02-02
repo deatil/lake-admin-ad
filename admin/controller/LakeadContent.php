@@ -130,9 +130,9 @@ class LakeadContent extends LakeadBase
             } elseif ($type == 3) {
                 $data['content'] = $data['code'];
             } elseif ($type == 4) {
-                $data['content'] = $data['name'];
+                $data['content'] = $data['text'];
             }
-            unset($data['image'], $data['url'], $data['code'], $data['name']);
+            unset($data['image'], $data['url'], $data['code'], $data['text']);
             
             $data['start_time'] = strtotime($data['start_time']);
             $data['end_time'] = strtotime($data['end_time']);
