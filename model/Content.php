@@ -53,10 +53,10 @@ class Content extends BaseModel
      */
     public function getContentsAttr()
     {
-        if ($this->type == 1) {
-            $content = lake_get_file_path($this->content);
+        if ($this->getAttr('type') == 1) {
+            $content = lake_get_file_path($this->getAttr('content'));
         } else {
-            $content = $this->content;
+            $content = $this->getAttr('content');
         }
         
         return $content;
