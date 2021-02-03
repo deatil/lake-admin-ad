@@ -25,10 +25,11 @@ class Content extends Validate
     protected $scene = [
         'add' => [
             'title', 
-            'type',
         ],
         'edit' => [
             'title', 
+            'url',
+            'target',
             'type',
         ],
     ];

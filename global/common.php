@@ -47,6 +47,8 @@ if (! function_exists('lakead_content_list')) {
             $newContent[] = [
                 'type' => $content['type'],
                 'title' => $content['title'],
+                'url' => $content['url'],
+                'target' => $content['target'],
                 'content' => $content['contents'],
             ];
         }
@@ -68,7 +70,9 @@ if (! function_exists('lakead_content_code_list')) {
         $newContents = collect($contents)->map(function($item) {
             if ($item['type'] == 1) {
                 $data = '<span class="lakead-image">';
+                $data .= '<a href="'.$item['url'].'" title="'.$item['title'].'" target="'.$item['target'].'">';
                 $data .= '<img src="'.$item['content'].'" alt="'.$item['title'].'" />';
+                $data .= '</a>';
                 $data .= '</span>';
             } elseif ($item['type'] == 2) {
                 $data = '<span class="lakead-url">';
@@ -80,7 +84,9 @@ if (! function_exists('lakead_content_code_list')) {
                 $data .= '</span>';
             } elseif ($item['type'] == 4) {
                 $data = '<span class="lakead-text">';
+                $data .= '<a href="'.$item['url'].'" title="'.$item['title'].'" target="'.$item['target'].'">';
                 $data .= $item['content'];
+                $data .= '</a>';
                 $data .= '</span>';
             }
             

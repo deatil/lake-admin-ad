@@ -31,6 +31,25 @@
             </div>
             
             <div class="layui-form-item">
+                <label class="layui-form-label">链接&nbsp;<font color="red">*</font></label>
+                <div class="layui-input-block w500">
+                    <input type="text" name="url" value="{$info.url}" lay-verify="required" autocomplete="off" placeholder="链接" class="layui-input">
+                </div>
+            </div>
+            
+            <div class="layui-form-item">
+                <label class="layui-form-label">跳转方式&nbsp;<font color="red">*</font></label>
+                <div class="layui-input-block w500">
+                    <select name="target" lay-verify="required" lay-filter="cate">
+                        <option value="_self" {if $info.target == '_self'}selected{/if}>本页面</option>
+                        <option value="_blank" {if $info.target == '_blank'}selected{/if}>新页面</option>
+                        <option value="_parent" {if $info.target == '_parent'}selected{/if}>父窗口</option>
+                        <option value="_top" {if $info.target == '_top'}selected{/if}>顶层窗口</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="layui-form-item">
                 <label class="layui-form-label">
                     显示方式
                     &nbsp;<font color="red">*</font>
@@ -56,11 +75,11 @@
                 <div class="layui-input-block w500">
                     <div class="js-upload-image">
                         {if $info.type == 1}
-                            {php}echo \HtmlForm::images('image', '', $info['content']){/php}
+                            {php}echo \HtmlForm::images('content_image', '', $info['content']){/php}
                         {/if}
                         
                         {if $info.type != 1}
-                            {php}echo \HtmlForm::images('image', '', ''){/php}
+                            {php}echo \HtmlForm::images('content_image', '', ''){/php}
                         {/if}
                     </div>
                 </div>
@@ -72,9 +91,9 @@
                 </label>
                 <div class="layui-input-block w500">
                     {if $info.type == 2}
-                        <input type="text" name="url" value="{$info.content}" autocomplete="off" placeholder="链接" class="layui-input">
+                        <input type="text" name="content_url" value="{$info.content}" autocomplete="off" placeholder="链接" class="layui-input">
                     {else /}
-                        <input type="text" name="url" value="" autocomplete="off" placeholder="链接" class="layui-input">
+                        <input type="text" name="content_url" value="" autocomplete="off" placeholder="链接" class="layui-input">
                     {/if}
                 </div>
             </div>
@@ -83,9 +102,9 @@
                 <label class="layui-form-label">代码</label>
                 <div class="layui-input-block w500">
                     {if $info.type == 3}
-                        <textarea name="code" placeholder="代码" class="layui-textarea">{$info.content}</textarea>
+                        <textarea name="content_code" placeholder="代码" class="layui-textarea">{$info.content}</textarea>
                     {else /}
-                        <textarea name="code" placeholder="代码" class="layui-textarea"></textarea>
+                        <textarea name="content_code" placeholder="代码" class="layui-textarea"></textarea>
                     {/if}
                 </div>
             </div>
@@ -96,9 +115,9 @@
                 </label>
                 <div class="layui-input-block w500">
                     {if $info.type == 4}
-                        <input type="text" name="text" value="{$info.content}" autocomplete="off" placeholder="文字" class="layui-input">
+                        <input type="text" name="content_text" value="{$info.content}" autocomplete="off" placeholder="文字" class="layui-input">
                     {else /}
-                        <input type="text" name="text" value="" autocomplete="off" placeholder="文字" class="layui-input">
+                        <input type="text" name="content_text" value="" autocomplete="off" placeholder="文字" class="layui-input">
                     {/if}
                 </div>
             </div>
@@ -106,6 +125,7 @@
             <div class="layui-form-item">
                 <label class="layui-form-label">
                     开始时间
+                    &nbsp;<font color="red">*</font>
                 </label>
                 <div class="layui-input-block w500">
                     <input type="text" name="start_time" value="{if $info['start_time']}{:date('Y-m-d H:i:s', $info['start_time'])}{/if}" lay-verify="required" autocomplete="off" placeholder="开始时间" class="layui-input content-start-time">
@@ -118,6 +138,7 @@
             <div class="layui-form-item">
                 <label class="layui-form-label">
                     结束时间
+                    &nbsp;<font color="red">*</font>
                 </label>
                 <div class="layui-input-block w500">
                     <input type="text" name="end_time" value="{if $info['end_time']}{:date('Y-m-d H:i:s', $info['end_time'])}{/if}" lay-verify="required" autocomplete="off" placeholder="结束时间" class="layui-input content-end-time">
