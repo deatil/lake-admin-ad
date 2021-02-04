@@ -8,9 +8,11 @@
 
 ### 安装使用
 
-*  composer安装 `composer require lake/lake-admin-ad`
-*  后台 `本地模块->模块管理->本地安装` 上传模块或者手动将模块上传到 `addon` 目录
-*  手动放置模块或者上传模块请确保目录为 `lakead/Service.php`
+*  composer安装
+    * `composer require lake/lake-admin-ad`
+*  本地安装
+    * 后台 `本地模块->模块管理->本地安装` 上传模块或者手动将模块上传到 `/addon` 目录
+    * 手动放置模块或者上传模块请确保目录为 `lakead/Service.php`
 *  最后在 `本地模块->模块管理->全部` 安装添加的模块
 
 
@@ -25,6 +27,8 @@
 | [菜单结构](https://github.com/deatil/lake-admin-addon-lmenu) | 提取后台菜单分级结构格式，为你的模块开发保驾护航 |
 | [数据库管理](https://github.com/deatil/lake-admin-addon-database) | 数据库备份、优化、修复及还原，你的系统维护帮手 |
 | [广告模块](https://github.com/deatil/lake-admin-ad) | cms模块必备 |
+| [自定义表单](https://github.com/deatil/lake-admin-form) | cms模块必备模块 |
+| [友情链接](https://github.com/deatil/lake-admin-friendlink) | cms模块必备模块 |
 
 
 ## 问题反馈
